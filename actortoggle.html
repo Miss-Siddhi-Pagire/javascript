@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Actors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        .button-container {
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #actorImage {
+            margin-top: 20px;
+            max-width: 500px;
+            height: auto;
+            width: 250px;
+            display: none;
+            margin-left: 30px;
+            border-radius: 10px;
+        }
+        .container{
+            margin: 20px auto;
+            width: 300px;
+            background-color: #8585ad;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 80px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+            <h1>My Favorite Actors</h1>
+            <img id="actorImage" src="" alt="Actor Image">
+            <div class="button-container">
+                <button onclick="showActor('amitabh')">Amitabh Bachchan</button>
+                <button onclick="showActor('madhuri')">Madhuri Dikshit</button>
+                <button onclick="showActor('shraddha')">Shraddha Kapur</button>
+            </div>
+    </div>
+
+    
+
+    <script>
+        function showActor(actor) {
+            var img = document.getElementById("actorImage");
+            if (actor === 'amitabh') {
+                img.src = "./actorimages/amitabh.jfif";
+            } else if (actor === 'madhuri') {
+                img.src = "./actorimages/madhuri.jfif";
+            } else if (actor === 'shraddha') {
+                img.src = "./actorimages/shraddha.jfif";
+            }
+            img.style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

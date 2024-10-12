@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb Toggler 2</title>
+    <style>
+        body{
+            background-color: #2e2e4b ;
+        }
+        .container{
+            margin: 20px auto;
+            width: 300px;
+            background-color: #8585ad;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 80px;
+        }
+        #bulb{
+            width: 80%;
+            margin: 20px auto;
+            display: block;
+        }
+        .mainheading{
+            color: white;
+            text-align: center;
+
+        }
+        .btn{
+            border: none;
+            padding: 5px 20px;
+            border-radius: 5px;
+
+        }
+        .btn-grp{
+            display: flex;
+            justify-content: space-around;
+            cursor: pointer;
+        }
+        .btn-off{
+background-color: black;
+color: white;
+        }
+        .btn-on{
+            background-color: yellow;
+            color: black;
+        }
+    </style>
+</head>
+<body id="body">
+    <div class="container" id="container">
+        <h1 class="mainheading" id="heading">Bulb Toggler</h1>
+        <img src="./bulbtogglerimages/bulbof.png" alt="bulb" id="bulb">
+        <div class="btn-grp">
+            <button class="btn btn-off" onclick="toggle('off')">Turn Off</button>
+            <button class="btn btn-on" onclick="toggle('on')">Turn On</button>
+        </div>
+    </div>
+
+    <script>
+        function toggle(mode){
+            const bulbImgElement = document.getElementById('bulb');
+            const bodyEle = document.getElementById('body');
+            const containerEle = document.getElementById('container');
+            const appheading = document.getElementById('heading');
+
+            const turnOn = mode == "on";
+                bulbImgElement.src =  turnOn ? "./bulbtogglerimages/bulbon.png" : "./bulbtogglerimages/bulbof.png";
+                bodyEle.style.backgroundColor = turnOn ? '#ffb31a' : ' #2e2e4b';
+                containerEle.style.backgroundColor= turnOn ? 'white': ' #8585ad';
+                appheading.style.color= turnOn ? 'black' : 'white';
+          }
+        
+    </script>
+
+    
+</body>
+</html>
